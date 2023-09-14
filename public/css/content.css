@@ -39,6 +39,8 @@ p,h2,h3{
 
 .right-grid-element{
     width:10em;
-    border:1px solid black;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
     height:10em;
 }

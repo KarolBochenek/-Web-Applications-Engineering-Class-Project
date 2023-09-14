@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="logo">
-            <img src="public/img/uploads/logo1.svg" alt="logo2">
+            <img src="public/img/uploads/logo.svg" alt="logo2">
         </div>
         <div class="login-container">
             <form class="login" action="login" method="POST">
@@ -25,7 +25,7 @@
                 </div>
                 <input type="text" name="email" placeholder="email@email.com">
                 <input type="text" name="password" placeholder="password"> 
-                <button>LOGIN</button>
+                <button type="submit">LOGIN</button>
             </form>
         </div>
 

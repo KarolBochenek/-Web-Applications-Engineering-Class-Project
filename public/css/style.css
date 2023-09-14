@@ -24,6 +24,22 @@ header>img{
 .login-container{
     width:40%;
 }
+.search-bar {
+    width: 30%;
+}
+
+.search-bar>form {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #707070;
+    border-radius: 23px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.72px;
+    color: #A8A8A8;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 form{
     display: flex;
@@ -65,7 +81,7 @@ button{
 input{
     border: none;
     background-color: transparent;
-    border-bottom: 1px solid gray;
+    border-bottom: #787878 1px solid;
     padding: 1em;
     margin: 1em;
     width:50%
@@ -99,6 +115,7 @@ header{
     height: 100px;
 
 }
+
 header>img{
     height:5em;
 }
@@ -120,7 +137,7 @@ main{
 
 .right {
     width:20%;
-    background-color: #39f904;
+    background-color: #aab4dc;
     display: flex;
     flex-direction: column;
 }
@@ -133,7 +150,7 @@ a {
 }
 
 .footer{
-    background-color: red;
+    background-color: yellow;
 }
 
 ul{
