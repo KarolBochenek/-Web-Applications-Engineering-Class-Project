@@ -36,7 +36,16 @@ p,h2,h3{
     color: white;
     
 }
+section.project-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.project-form>form {
+    display: flex;
+    flex-direction: column;
+}
 .right-grid-element{
     width:10em;
     border: 1px solid white;
