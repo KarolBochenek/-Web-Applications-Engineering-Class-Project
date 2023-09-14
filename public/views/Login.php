@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="logo">
-            <img src="public/img/logo.svg" alt="logo2">
+            <img src="public/img/uploads/logo1.svg" alt="logo2">
         </div>
         <div class="login-container">
             <form class="login" action="login" method="POST">

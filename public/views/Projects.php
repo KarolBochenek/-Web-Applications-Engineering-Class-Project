@@ -12,7 +12,7 @@
 <body>
     <div class="base-container">
         <header> 
-            <img src="public/img/logo1.svg" alt="logo">
+            <img src="public/img/uploads/logo2.svg" alt="logo">
             <ul>
                 <li>
                     <i class="lorem ipsum"></i>
