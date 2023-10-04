@@ -39,7 +39,7 @@
                 <div class="grid-element" id="grid-element1">
                     <img src="public/img/uploads/lorem.png" alt="books">
                     <div class="content-description">
-                        <h3>Lorem ipsum dolor sit amet</h2> 
+                        <h2>Lorem ipsum dolor sit amet</h2> 
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
                         <div class="social-section">
                             <i class="fas-fa heart"> 600 </i>
@@ -49,7 +49,7 @@
                 <div class="grid-element" id="grid-element2">
                     <img src="public/img/uploads/lorem.png" alt="books">
                     <div class="content-description">
-                        <h3>Lorem ipsum dolor sit amet</h2> 
+                        <h2>Lorem ipsum dolor sit amet</h2> 
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
                         <div class="social-section">
                             <i class="fas-fa heart"> 600 </i>
@@ -59,7 +59,7 @@
                 <div class="grid-element" id="grid-element3">
                     <img src="public/img/uploads/lorem.png" alt="books">
                     <div class="content-description">
-                        <h3>Lorem ipsum dolor sit amet</h2> 
+                        <h2>Lorem ipsum dolor sit amet</h2> 
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
                         <div class="social-section">
                             <i class="fas-fa heart"> 600 </i>
@@ -69,7 +69,7 @@
                 <div class="grid-element" id="grid-element4">
                     <img src="public/img/uploads/lorem.png" alt="books">
                     <div class="content-description">
-                        <h3>Lorem ipsum dolor sit amet</h2> 
+                        <h2>Lorem ipsum dolor sit amet</h2> 
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
                         <div class="social-section">
                             <i class="fas-fa heart"> 600 </i>
@@ -79,7 +79,7 @@
                 <div class="grid-element" id="grid-element5">
                     <img src="public/img/uploads/lorem.png" alt="books">
                     <div class="content-description">
-                        <h3>Lorem ipsum dolor sit amet</h2> 
+                        <h2>Lorem ipsum dolor sit amet</h2> 
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
                         <div class="social-section">
                             <i class="fas-fa heart"> 600 </i>
@@ -89,7 +89,7 @@
                 <div class="grid-element" id="grid-element6">
                     <img src="public/img/uploads/lorem.png" alt="books">
                     <div class="content-description">
-                        <h3>Lorem ipsum dolor sit amet</h2> 
+                        <h2>Lorem ipsum dolor sit amet</h2> 
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
                         <div class="social-section">
                             <i class="fas-fa heart"> 600 </i>
@@ -99,7 +99,7 @@
                 <div class="grid-element" id="grid-element6">
                     <img src="public/img/uploads/lorem.png" alt="books">
                     <div class="content-description">
-                        <h3>Lorem ipsum dolor sit amet</h2> 
+                        <h2>Lorem ipsum dolor sit amet</h2> 
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
                         <div class="social-section">
                             <i class="fas-fa heart"> 600 </i>
@@ -109,7 +109,7 @@
                 <div class="grid-element" id="grid-element6">
                     <img src="public/img/uploads/lorem.png" alt="books">
                     <div class="content-description">
-                        <h3>Lorem ipsum dolor sit amet</h2> 
+                        <h2>Lorem ipsum dolor sit amet</h2> 
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
                         <div class="social-section">
                             <i class="fas-fa heart"> 600 </i>
@@ -119,7 +119,7 @@
                 <div class="grid-element" id="grid-element6">
                     <img src="public/img/uploads/lorem.png" alt="books">
                     <div class="content-description">
-                        <h3>Lorem ipsum dolor sit amet</h2> 
+                        <h2>Lorem ipsum dolor sit amet</h2> 
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
                         <div class="social-section">
                             <i class="fas-fa heart"> 600 </i>
