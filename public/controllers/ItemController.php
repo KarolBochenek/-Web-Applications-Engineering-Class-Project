@@ -11,7 +11,7 @@ class ItemController extends AppController {
 
     private $message = [];
 
-    public function addItem()
+    public function additem()
     {
         if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
             move_uploaded_file(
@@ -20,7 +20,7 @@ class ItemController extends AppController {
             );
 
             // TODO create new project object and save it in database
-            $project = new Item($_POST['title'], $_POST['description'], $_FILES['file']['name']);
+            $item = new Item($_POST['title'], $_POST['description'], $_FILES['file']['name']);
 
             return $this->render('projects', ['messages' => $this->message]);
         }
