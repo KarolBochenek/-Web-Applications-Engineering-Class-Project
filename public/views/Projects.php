@@ -7,28 +7,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROJECTS</title>
-    <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
+    <!--<script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>-->
+    <style>
+        .search-bar {
+            width: 30%;
+        }
+
+        .search-bar>input {
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 3px 6px #00000029;
+            border: 1px solid #707070;
+            border-radius: 23px;
+            width: 100%;
+            text-align: center;
+            letter-spacing: 0.72px;
+            color: #A8A8A8;
+            margin: 1em;
+            line-height: 2.5em;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
     <div class="base-container">
         <header> 
-            <img src="public/img/uploads/logo2.svg" alt="logo">
+            <img src="public/img/uploads/logo.svg" alt="logo">
+            <div class="search-bar">
+                    <input placeholder="Search">
+            </div>
             <ul>
                 <li>
                     <i class="lorem ipsum"></i>
-                    <a href="#" class="button">O nas</a>
+                    <a href="#" class="button">Add item</a>
                 </li>
                 <li>
                     <i class="lorem ipsum"></i>
-                    <a href="#" class="button">Blog</a>
+                    <a href="#" class="button">Full items list</a>
                 </li>
                 <li>
                     <i class="lorem ipsum"></i>
-                    <a href="#" class="button">Książki</a>
+                    <a href="#" class="button">Manage</a>
                 </li>
                 <li>
                     <i class="lorem ipsum"></i>
-                    <a href="#" class="button">Kontakt</a>
+                    <a href="#" class="button">Log out</a>
                 </li>
 
             </ul> 
@@ -38,11 +60,10 @@
             <section class="grid-container">
                 <div class="grid-element" id="grid-element1">
                     <img src="public/img/uploads/lorem.png" alt="books">
-                    
 
                     <div class="content-description">
                         <h2>Lorem ipsum dolor sitttt amet</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
+                        <p>Lorem ipsum dolor sit ameeet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
                         <div class="social-section">
                             <i class="fas-fa heart"> 600 </i>
                         </div>

@@ -13,11 +13,6 @@
 <div class="base-container">
     <header>
         <img src="public/img/uploads/logo.svg" alt="logo">
-        <div class="search-bar">
-            <form>
-                <input placeholder="search project">
-            </form>
-        </div>
         <ul>
             <li>
                 <i class="lorem ipsum"></i>
