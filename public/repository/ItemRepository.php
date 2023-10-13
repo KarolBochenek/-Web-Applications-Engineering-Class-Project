@@ -27,7 +27,7 @@ class ItemRepository extends Repository
         );
     }
 
-    public function addItem(Item $item): void
+    public function additem(Item $item): void
     {
         $date = new DateTime();
         $stmt = $this->database->connect()->prepare('

@@ -21,7 +21,7 @@ class ItemController extends AppController {
         $items = $this->ItemRepository->getItems();
         $this->render('items', ['items' => $items]);
     }
-    public function additem()
+    public function addItem()
     {
         if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
             move_uploaded_file(
@@ -34,7 +34,7 @@ class ItemController extends AppController {
 
             return $this->render('items', ['messages' => $this->message]);
         }
-        return $this->render('add-item', ['messages' => $this->message]);
+        return $this->render('additem', ['messages' => $this->message]);
     }
 
     private function validate(array $file): bool

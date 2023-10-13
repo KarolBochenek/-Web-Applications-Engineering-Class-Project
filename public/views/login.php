@@ -37,7 +37,7 @@
                         }
                     ?>
                 </div>
-                <input type="text" name="email" placeholder="email@email.com">
+                <input type="text" name="email" placeholder="email@emailemail.com">
                 <input type="text" name="password" placeholder="password"> 
                 <button type="submit">LOGIN</button>
             </form>

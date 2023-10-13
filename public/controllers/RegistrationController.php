@@ -24,7 +24,7 @@ class RegistrationController extends AppController
         $confirmPassword = $_POST['confirm-password'];
 
         // Podstawowa walidacja - może być rozbudowana o dodatkowe kryteria
-        if (empty($name) || empty($lastname) || empty($email) || empty($rawPassword)) {
+        if (empty($name) || empty($surname) || empty($email) || empty($rawPassword)) {
             return $this->render('register', ['messages' => ['Wypełnij wszystkie pola!']]);
         }
 

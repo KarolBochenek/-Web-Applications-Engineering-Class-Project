@@ -138,6 +138,9 @@ a {
 
 .footer{
     background-color: #46463d;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 }
 
 ul{
