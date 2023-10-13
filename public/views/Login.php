@@ -6,6 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN PAGE</title>
+    <style>
+        input{
+            border: none;
+            background-color: transparent;
+            border-bottom: #b4dcaa 1px solid;
+            padding: 1em;
+            margin: 1em;
+            width:50%
+
+        }
+        .logo>img{
+            margin:0.5em;
+        }
+    </style>
 </head>
 <body>
     <div class="container">

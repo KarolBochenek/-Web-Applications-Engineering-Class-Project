@@ -57,7 +57,7 @@
 
         </header>
         <main>
-            <section class="grid-container">
+            <!--<section class="grid-container">
                 <div class="grid-element" id="grid-element1">
                     <img src="public/img/uploads/lorem.png" alt="books">
 
@@ -150,8 +150,20 @@
                             <i class="fas-fa heart"> 600 </i>
                         </div>
                     </div> 
-                </div>
-            </section>
+                </div> -->
+                <section class="grid-container">
+                    <?php if (isset($items) && count($items) > 0): ?>
+                    <?php foreach ($items as $item): ?>
+                        <div id="<?= $item->getId(); ?>">
+                            <img src="public/img/uploads/<?= $item->getImage(); ?>">
+                            <div>
+                                <h2><?= $item->getTitle(); ?></h2>
+                                <p><?= $item->getDescription(); ?></p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                    <?php endif; ?>
+                </section>
             <section class="right">
                 <div class="right-grid-element" id="right-grid-element1">right-WPIS</div>
                 <div class="right-grid-element" id="right-grid-element2">right-WPIS2</div>
@@ -161,7 +173,7 @@
 
 
         <footer>
-            <div class="footer">FOOTER</div>
+            <?php require_once __DIR__ . '/../templates/footer.php'; ?>
         </footer>
     </div>
 </body>

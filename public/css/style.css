@@ -65,7 +65,7 @@ button{
     padding:1em;
 }
 
-/*input{
+input{
     border: none;
     background-color: transparent;
     border-bottom: #b4dcaa 1px solid;
@@ -73,7 +73,7 @@ button{
     margin: 1em;
     width:50%
 
-}*/
+}
 
 @media only screen and (max-device-width: 420px){
 

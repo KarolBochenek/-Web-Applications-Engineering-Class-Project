@@ -2,6 +2,7 @@
 
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/Item.php';
+require_once __DIR__ . '/../repository/ItemRepository.php';
 
 class ItemController extends AppController {
 
@@ -10,7 +11,16 @@ class ItemController extends AppController {
     const UPLOAD_DIRECTORY = '/../public/img/uploads/';
 
     private $message = [];
-
+    public function __construct()
+    {
+        parent::__construct();
+        $this->ItemRepository = new ItemRepository();
+    }
+    public function items()
+    {
+        $items = $this->ItemRepository->getItems();
+        $this->render('items', ['items' => $items]);
+    }
     public function additem()
     {
         if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
@@ -22,7 +32,7 @@ class ItemController extends AppController {
             // TODO create new project object and save it in database
             $item = new Item($_POST['title'], $_POST['description'], $_FILES['file']['name']);
 
-            return $this->render('projects', ['messages' => $this->message]);
+            return $this->render('items', ['messages' => $this->message]);
         }
         return $this->render('add-item', ['messages' => $this->message]);
     }
