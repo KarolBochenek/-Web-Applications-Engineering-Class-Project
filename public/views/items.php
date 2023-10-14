@@ -43,10 +43,10 @@
                         <div class="grid-element" id="<?= $item->getId(); ?>">
                             <img src="public/img/uploads/<?= $item->getImage(); ?>">
                             <div class="content-description">
-                                <h3><?= $item->getTitle(); ?></h3>
-                                <h3><?= $item->getGenre(); ?></h3>
-                                <h3><?= $item->getAuthor(); ?></h3>
-                                <p><?= $item->getDescription(); ?></p>
+                                <h3>Title: <?= $item->getTitle(); ?></h3>
+                                <h3>Genre: <?= $item->getGenre(); ?></h3>
+                                <h3>Author: <?= $item->getAuthor(); ?></h3>
+                                <p>Description: <?= $item->getDescription(); ?></p>
                                 <div class="content-details">
                                  <p>Number of pages: <?=$item->getPages();?></p>
                                     <p>Publisher: <?=$item->getPublisher();?></p>
@@ -63,11 +63,7 @@
                         </tr>
                     <?php endif; ?>
                 </section>
-            <section class="right">
-                <div class="right-grid-element" id="right-grid-element1">right-WPIS</div>
-                <div class="right-grid-element" id="right-grid-element2">right-WPIS2</div>
-                <div class="right-grid-element" id="right-grid-element3">right-WPIS3</div>
-            </section>
+
         </main>
 
 

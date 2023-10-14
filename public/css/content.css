@@ -1,6 +1,6 @@
 section{
     display:grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
     grid-gap: 2em;
     padding: 2em;
     overflow: auto;
@@ -28,7 +28,6 @@ p,h2,h3{
     display:flex;
     flex-direction: column;
     justify-content:space-between;
-
     background:  transparent linear-gradient(180deg, #267bfb 0%, #2699fb 100%) 0% 0% no-repeat padding-box;
     box-shadow:  0px 3px 6px #00000029;
     border: 1px solid white;
@@ -40,11 +39,12 @@ p,h2,h3{
     cursor: pointer;
     transition: max-height 0.5s;
     overflow: hidden;
-    max-height: 60px;
+    max-height: 15em;
     
 }
 .grid-element.expanded {
-    max-height: 100px; /* Adjust the max height for expanded state */
+    max-height: 25em;
+    height:400px;
 }
 .content-description{
     background:  transparent linear-gradient(180deg, #267bfb 0%, #2699fb 100%) 0% 0% no-repeat padding-box;

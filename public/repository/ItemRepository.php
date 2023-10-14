@@ -69,6 +69,7 @@ WHERE pi.item_id = :id;
         $stmt = $this->database->connect()->prepare('
             INSERT INTO items (title, description, image, genre, author_id)
             VALUES (:title, :description, :image, :genre, :author_id)
+            RETURNING item_id
         ');
 
         //TODO you should get this value from logged user session
@@ -81,7 +82,7 @@ WHERE pi.item_id = :id;
 
         $stmt->execute();
 
-        $bookId = $pdo->lastInsertId();
+        $bookId = $stmt->fetchColumn();
         echo "book_id: ".$bookId;
         $stmt = $pdo->prepare('INSERT INTO books_authors (book_id, author_id) VALUES (:book_id, :author_id)');
         $stmt->bindParam(':book_id', $bookId, PDO::PARAM_INT);

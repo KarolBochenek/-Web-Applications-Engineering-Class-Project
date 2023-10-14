@@ -54,7 +54,7 @@ button{
     padding:1em;
 }
 .button{
-    background:  transparent linear-gradient(180deg, #52352d 0%, #b79da2 100%) 0% 0% no-repeat padding-box;
+    background:  transparent linear-gradient(180deg, #267bfb 0%, #2699fb 100%) 0% 0% no-repeat padding-box;
     box-shadow:  0px 3px 6px #00000029;
     border: 1px solid white;
     border-radius: 23px;
