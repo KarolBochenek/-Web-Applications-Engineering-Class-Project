@@ -18,8 +18,19 @@ class ItemController extends AppController {
     }
     public function items()
     {
-        $items = $this->ItemRepository->getItems();
-        $this->render('items', ['items' => $items]);
+        if ($this->isLoggedIn()) {
+
+            $items = $this->ItemRepository->getItems();
+            $this->render('items', ['items' => $items]);
+
+        }
+        else
+        {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/login");
+        }
+        //$items = $this->ItemRepository->getItems();
+        //$this->render('items', ['items' => $items]);
     }
     public function addItem()
     {

@@ -18,6 +18,21 @@ class AppController{
     {
         return $this->request === 'POST';
     }
+    protected function isLoggedIn(): bool
+    {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        return isset($_SESSION['user']);
+    }
+    protected function redirectIfNotLoggedIn()
+    {
+        if (!$this->isLoggedIn()) {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/login");
+        }
+    }
 
     protected function render(string $template = null, array $variables = []){
         $templatePath = 'public/views/'.$template.'.php';

@@ -26,7 +26,12 @@ header>img{
 }
 
 .search-bar {
-    width: 70%;
+    width: 50%;
+}
+.header-buttons {
+    width: 40%;
+    margin-top:auto;
+    margin-bottom: auto;
 }
 
 .search-bar>input {
@@ -113,7 +118,7 @@ header{
     border-bottom: #787878 solid;
     justify-content: space-between;
     position: fixed;
-    height: 100px;
+    padding: 1em 2em;
 
 }
 
@@ -124,6 +129,7 @@ li{
     display:inline;
     
 }
+
 main{
     width:100%;
     display: flex;
@@ -162,6 +168,8 @@ a {
 ul{
     margin-top:auto;
     margin-bottom: auto;
+    white-space: nowrap;
+    width: 100%;
 }
 
 .footer {

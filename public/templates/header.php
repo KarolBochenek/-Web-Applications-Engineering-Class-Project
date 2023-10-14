@@ -5,6 +5,7 @@ echo <<<HEADER
             <div class="search-bar">
                     <input placeholder="Search">
             </div>
+            <div class="header-buttons">
             <ul>
                 <li>
                     <i class="lorem ipsum"></i>
@@ -24,6 +25,6 @@ echo <<<HEADER
                 </li>
 
             </ul> 
-
+            </div>
         </header>
 HEADER;

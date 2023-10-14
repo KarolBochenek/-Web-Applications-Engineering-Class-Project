@@ -11,7 +11,6 @@ create table books_authors
         constraint booksauthors_author_id_fk
             references authors
             on update cascade on delete cascade
-
 );
 
 alter table books_authors

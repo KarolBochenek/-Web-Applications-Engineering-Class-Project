@@ -30,7 +30,7 @@ class User{
         $this->email = $email;
     }
 
-    public function getPassword(): string 
+    public function getPassword(): ?string
     {
         return $this->password;
     }

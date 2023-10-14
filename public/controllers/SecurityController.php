@@ -12,52 +12,60 @@ class SecurityController extends AppController{
         parent::__construct();
         $this->userRepository = new UserRepository();
     }
-    public function login(){
+    public function login()
+    {
+        if ($this->isLoggedIn()) {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/items");
+        } else {
 
-        //$userRepository = new UserRepository();
 
-        //$user = new User('sobieski@pk.edu.pl', 'admin', 'Jan', 'Sobieski' );
-        //var_dump($_POST);
-        //die();
+            if (!$this->isPost()) {
+                return $this->render('login');
+            }
 
-        if (!$this->isPost()) {
-            return $this->render('login');
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $user = $this->userRepository->getUser($email);
+
+            $passwordMatches = password_verify($password, $user->getPassword());
+
+            if (!$user) {
+                return $this->render('login', ['messages' => ['User not found!']]);
+            }
+
+            if ($user->getEmail() !== $email) {
+                return $this->render('login', ['messages' => ['User with this email not exist!']]);
+            }
+
+            if (!$passwordMatches) {
+                return $this->render('login', ['messages' => ['Wrong password!']]);
+            }
+            session_start();
+            $_SESSION['user'] = [
+                'id' => $user->getId(),
+                'email' => $user->getEmail(),
+                'name' => $user->getName(),
+                'surname' => $user->getSurname(),
+            ];
+
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/items");
         }
-
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $user = $this->userRepository->getUser($email);
-
-        if (!$user) {
-            return $this->render('login', ['messages' => ['User not found!']]);
-        }
-
-        if ($user->getEmail() !== $email) {
-            return $this->render('login', ['messages' => ['User with this email not exist!']]);
-        }
-
-        if ($user->getPassword() !== $password) {
-            return $this->render('login', ['messages' => ['Wrong password!']]);
-        }
-        $_SESSION['user'] = [
-            'id' => $user->getId(),
-            'email' => $user->getEmail(),
-            'name' => $user->getName(),
-            'surname' => $user->getSurname(),
-        ];
-
-        $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/items");
     }
     public function logout()
     {
+        session_start();
+        session_unset();
+        session_destroy();
         unset($_SESSION['user']);
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/login");
     }
+
     public function register()
     {
-        if (!$this->isPost()) {
+        if (!$this->isLoggedIn()) {
             return $this->render('register');
         }
 
@@ -73,7 +81,8 @@ class SecurityController extends AppController{
         }
 
         //TODO try to use better hash function
-        $user = new User($email, md5($password), $name, $surname);
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $user = new User($email, $hashedPassword, $name, $surname);
         //$user->setPhone($phone);
 
         $this->userRepository->addUser($user);

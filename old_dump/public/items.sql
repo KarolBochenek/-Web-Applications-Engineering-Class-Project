@@ -6,7 +6,8 @@ create table items
     title       varchar(255),
     description varchar(255),
     genre       varchar(100),
-    image       varchar(255)
+    image       varchar(255),
+    author_id   integer
 );
 
 alter table items
