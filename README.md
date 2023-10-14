@@ -33,3 +33,9 @@ Aby uruchomić projekt lokalnie, postępuj zgodnie z poniższymi krokami:
 
 ## Diagram ERD
 ![Entity-Relationship-Diagram](https://github.com/KarolBochenek/wdpai_2023/blob/lab01/Entity-Relationship-Diagram.png)
+
+## Widoki
+![items-page](https://github.com/KarolBochenek/wdpai_2023/blob/lab01/public/img/items-page.PNG)
+![items-page](https://github.com/KarolBochenek/wdpai_2023/blob/lab01/public/img/login-page.PNG)
+![items-page](https://github.com/KarolBochenek/wdpai_2023/blob/lab01/public/img/register-page.PNG)
+![items-page](https://github.com/KarolBochenek/wdpai_2023/blob/lab01/public/img/phone-view.PNG)
