@@ -27,7 +27,7 @@ class Item {
         $this->condition = $condition;
     }
 
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->title;
     }
