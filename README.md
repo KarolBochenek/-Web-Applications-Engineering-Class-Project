@@ -19,7 +19,7 @@ Aby uruchomić projekt lokalnie, postępuj zgodnie z poniższymi krokami:
 * Sesja użytkownika
 * Wylogowywanie użytkownika
 * Hashowanie haseł w oparciu o md5
-* Dodawanie nowych kaw do bazy danych
+* Dodawanie nowych przedmiotów do bazy danych
 * Responsywny design i tryb mobilny
 
 ## Użyte technologie
