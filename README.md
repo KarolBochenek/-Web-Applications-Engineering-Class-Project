@@ -9,7 +9,7 @@ Aby uruchomić projekt lokalnie, postępuj zgodnie z poniższymi krokami:
 1. Pobierz Dockera ze strony [Docker](https://www.docker.com/) i zainstaluj go.
 2. Sklonuj repozytorium.
 3. Ustaw połączenie z bazą danych w pliku `config.php`.
-4. Uruchom run.cmd/run.sh (w zależności od systemu)
+4. Uruchom run.cmd/run.sh (w zależności od systemu) lub wstaw w terminalu katalog projektu jako bieżący i uruchom kontener Docker za pomocą komendy: docker compose build a następnie docker compose up.
 5. Uruchom przeglądarkę i wpisz adres: http://localhost:8080
 6. By zakończyć, uruchom shudown.cmd/shudown.sh
 
