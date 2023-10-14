@@ -39,9 +39,21 @@ class SecurityController extends AppController{
         if ($user->getPassword() !== $password) {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
+        $_SESSION['user'] = [
+            'id' => $user->getId(),
+            'email' => $user->getEmail(),
+            'name' => $user->getName(),
+            'surname' => $user->getSurname(),
+        ];
 
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/projects");
+        header("Location: {$url}/items");
+    }
+    public function logout()
+    {
+        unset($_SESSION['user']);
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/login");
     }
     public function register()
     {
@@ -54,7 +66,7 @@ class SecurityController extends AppController{
         $confirmedPassword = $_POST['confirmedPassword'];
         $name = $_POST['name'];
         $surname = $_POST['surname'];
-        $phone = $_POST['phone'];
+        //$phone = $_POST['phone'];
 
         if ($password !== $confirmedPassword) {
             return $this->render('register', ['messages' => ['Please provide proper password']]);
@@ -62,7 +74,7 @@ class SecurityController extends AppController{
 
         //TODO try to use better hash function
         $user = new User($email, md5($password), $name, $surname);
-        $user->setPhone($phone);
+        //$user->setPhone($phone);
 
         $this->userRepository->addUser($user);
 

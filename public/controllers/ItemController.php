@@ -30,9 +30,14 @@ class ItemController extends AppController {
             );
 
             // TODO create new project object and save it in database
-            $item = new Item($_POST['title'], $_POST['description'], $_FILES['file']['name']);
+            $item = new Item($_POST['title'], $_POST['description'], $_FILES['file']['name'],$_POST['genre'],$_POST['author']
+                ,$_POST['pages'],$_POST['publisher'],$_POST['ISBN'],$_POST['condition']);
+            $this->ItemRepository->additem($item);
 
-            return $this->render('items', ['messages' => $this->message]);
+            return $this->render('items', [
+                'messages' => $this->message,
+                'items' => $this->ItemRepository->getItems()
+            ]);
         }
         return $this->render('additem', ['messages' => $this->message]);
     }

@@ -8,32 +8,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROJECTS</title>
     <!--<script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>-->
+    <style>
+        .search-bar {
+            width: 30%;
+        }
+
+        .search-bar>input {
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 3px 6px #00000029;
+            border: 1px solid #707070;
+            border-radius: 23px;
+            width: 100%;
+            text-align: center;
+            letter-spacing: 0.72px;
+            color: #A8A8A8;
+            margin: 1em;
+            line-height: 2.5em;
+            box-sizing: border-box;
+        }
+
+    </style>
 </head>
 <body>
 <div class="base-container">
-    <header>
-        <img src="public/img/uploads/logo.svg" alt="logo">
-        <ul>
-            <li>
-                <i class="lorem ipsum"></i>
-                <a href="#" class="button">Add item</a>
-            </li>
-            <li>
-                <i class="lorem ipsum"></i>
-                <a href="#" class="button">Full items list</a>
-            </li>
-            <li>
-                <i class="lorem ipsum"></i>
-                <a href="#" class="button">Manage</a>
-            </li>
-            <li>
-                <i class="lorem ipsum"></i>
-                <a href="#" class="button">Log out</a>
-            </li>
-
-        </ul>
-
-    </header>
+    <?php require_once __DIR__ . '/../templates/header.php'; ?>
     <main>
 
         <section class="project-form">
@@ -49,6 +47,12 @@
                         ?>
                 </div>
                 <input name="title" type="text" placeholder="title">
+                <input name="author" type="text" placeholder="author name">
+                <input name="genre" type="text" placeholder="genre">
+                <input name="pages" type="text" placeholder="number of pages">
+                <input name="publisher" type="text" placeholder="publisher">
+                <input name="ISBN" type="text" placeholder="ISBN">
+                <input name="condition" type="text" placeholder="condition">
                 <textarea name="description" rows=5 placeholder="description"></textarea>
 
                 <input type="file" name="file"/><br/>
@@ -59,7 +63,7 @@
 
 
     <footer>
-        <div class="footer">FOOTER</div>
+        <?php require_once __DIR__ . '/../templates/footer.php'; ?>
     </footer>
 </div>
 </body>

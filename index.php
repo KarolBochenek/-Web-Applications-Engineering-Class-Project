@@ -17,8 +17,9 @@ if ($httpMethod == 'GET' && $path == 'register') {
     $controller->register();
 } else {
     Routing::get('', 'DefaultController');
-    Routing::get('items', 'DefaultController');
+    Routing::get('items', 'ItemController');
     Routing::post('login', 'SecurityController');
+    Routing::get('logout', 'SecurityController');
     Routing::post('additem', 'ItemController');
     Routing::run($path);
 }

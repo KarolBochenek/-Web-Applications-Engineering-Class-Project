@@ -9,7 +9,11 @@ class ItemRepository extends Repository
     public function getItem(int $id): ?Item
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.items WHERE id = :id
+SELECT pi.item_id, pi.title, pi.description, pi.genre, pi.image, an.name, bd.pages, bd.publisher, bd.isbn, bd.condition
+FROM public.items pi
+         LEFT JOIN public.authors an ON pi.author_id = an.author_id
+         LEFT JOIN public.books_details bd ON pi.item_id = bd.book_id
+WHERE pi.item_id = :id;
         ');
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -23,26 +27,89 @@ class ItemRepository extends Repository
         return new Item(
             $item['title'],
             $item['description'],
-            $item['image']
+            $item['image'],
+            $item['genre'],
+            $item['name'],
+            $item['pages'],
+            $item['publisher'],
+            $item['isbn'],
+            $item['condition'],
+            $item['item_id']
         );
     }
 
     public function additem(Item $item): void
     {
+        $pdo = $this->database->connect();
+    try{
+        $pdo->beginTransaction();
+        $title = $item->getTitle();
+        $description =   $item->getDescription();
+        $image = $item ->getImage();
+        $genre = $item->getGenre();
+        $authorName = $item->getAuthor();
+
+        echo "title: " . $title." descrption: ".$description." image ".$image." genre ".$genre." author ".$authorName;
+        $stmt = $pdo->prepare('SELECT author_id FROM authors WHERE name = :author');
+        $stmt->bindParam(':author', $authorName, PDO::PARAM_STR);
+        $stmt->execute();
+        $author = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$author) {
+            $stmt = $pdo->prepare('INSERT INTO authors (name) VALUES (:author)');
+            $stmt->bindParam(':author', $authorName, PDO::PARAM_STR);
+            $stmt->execute();
+
+            $authorId = $pdo->lastInsertId();
+        }else {
+            $authorId = $author['author_id'];
+        }
         $date = new DateTime();
+        echo "author_id : ".$authorId;
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO items (title, description, image)
-            VALUES (?, ?, ?)
+            INSERT INTO items (title, description, image, genre, author_id)
+            VALUES (:title, :description, :image, :genre, :author_id)
         ');
 
         //TODO you should get this value from logged user session
-        $assignedById = 1;
+        //$assignedById = 1;
+        $stmt->bindParam(':title', $title, PDO::PARAM_STR);
+        $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+        $stmt->bindParam(':image', $image, PDO::PARAM_STR);
+        $stmt->bindParam(':genre', $genre, PDO::PARAM_STR);
+        $stmt->bindParam(':author_id', $authorId, PDO::PARAM_INT);
 
-        $stmt->execute([
-            $item->getTitle(),
-            $item->getDescription(),
-            $item->getImage(),
-        ]);
+        $stmt->execute();
+
+        $bookId = $pdo->lastInsertId();
+        echo "book_id: ".$bookId;
+        $stmt = $pdo->prepare('INSERT INTO books_authors (book_id, author_id) VALUES (:book_id, :author_id)');
+        $stmt->bindParam(':book_id', $bookId, PDO::PARAM_INT);
+        $stmt->bindParam(':author_id', $authorId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        // Zatwierdzenie zmian w transakcji
+        $pages = $item->getPages();
+        $publisher = $item->getPublisher();
+        $isbn = $item->getISBN();
+        $condition = $item->getCondition();
+        $stmt = $pdo->prepare('
+            INSERT INTO books_details (book_id, pages, publisher, isbn, condition)
+            VALUES (:bookId, :pages, :publisher, :isbn, :condition)
+        ');
+        $stmt->bindParam(':book_id', $bookId, PDO::PARAM_INT);
+        $stmt->bindParam(':pages', $pages, PDO::PARAM_INT);
+        $stmt->bindParam(':publisher', $publisher, PDO::PARAM_STR_CHAR);
+        $stmt->bindParam(':isbn', $isbn, PDO::PARAM_STR_CHAR);
+        $stmt->bindParam(':condition', $condition, PDO::PARAM_STR_CHAR);
+        $stmt->execute();
+        $pdo->commit();
+
+    } catch (\Exception $e) {
+    // Wycofanie zmian w transakcji w przypadku błędu
+        $pdo->rollBack();
+        throw $e;  // Rzucenie wyjątku dalej, aby móc go obsłużyć w kodzie wywołującym
+}
     }
 
     public function getItems(): array
@@ -50,7 +117,10 @@ class ItemRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM items;
+SELECT pi.item_id, pi.title, pi.description, pi.genre, pi.image, an.name, bd.pages, bd.publisher, bd.isbn, bd.condition
+FROM public.items pi
+         LEFT JOIN public.authors an ON pi.author_id = an.author_id
+         LEFT JOIN public.books_details bd ON pi.item_id = bd.book_id
         ');
         $stmt->execute();
         $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -59,8 +129,14 @@ class ItemRepository extends Repository
             $result[] = new Item(
                 $item['title'],
                 $item['description'],
+                $item['author_name'],
+                $item['genre'],
                 $item['image'],
-                $item['id']
+                $item['pages'],
+                $item['publisher'],
+                $item['isbn'],
+                $item['condition'],
+                $item['item_id']
             );
         }
 

@@ -29,12 +29,18 @@ p,h2,h3{
     flex-direction: column;
     justify-content:space-between;
 
-    background:  transparent linear-gradient(180deg, #1a53a996 0%, #0486f9 100%) 0% 0% no-repeat padding-box;
+    background:  transparent linear-gradient(180deg, #ff7d52 0%, #ffcb49 100%) 0% 0% no-repeat padding-box;
     box-shadow:  0px 3px 6px #00000029;
     border: 1px solid white;
     border-radius: 5px;
     color: white;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
     
+}
+.content-description{
+    background:  transparent linear-gradient(180deg, #f7dba7 0%, #bf9577 100%) 0% 0% no-repeat padding-box;
 }
 
 section.project-form {
@@ -46,11 +52,14 @@ section.project-form {
 .project-form>form {
     display: flex;
     flex-direction: column;
+
 }
 .right-grid-element{
     width:10em;
     border: 1px solid white;
+    background:  transparent linear-gradient(180deg, #52352d 0%, #b79da2 100%) 0% 0% no-repeat padding-box;
     border-radius: 5px;
     color: white;
+
     height:10em;
 }

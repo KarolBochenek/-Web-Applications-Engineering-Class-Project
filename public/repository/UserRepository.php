@@ -49,12 +49,12 @@ class UserRepository extends Repository
             $userId = $stmt->fetchColumn();
 
             $stmt = $database->prepare('
-                INSERT INTO public.user_details (user_id, name, lastname)
+                INSERT INTO public.user_details (user_id, name, surname)
                 VALUES (?, ?, ?)
             ');
 
             $name = $user->getName();
-            $lastname = $user->getLastname();
+            $lastname = $user->getSurname();
 
             $stmt->execute([$userId, $name, $lastname]);
         } catch (PDOException $e) {

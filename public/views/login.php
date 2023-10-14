@@ -11,6 +11,7 @@
             border: none;
             background-color: transparent;
             border-bottom: #b4dcaa 1px solid;
+            color: white;
             padding: 1em;
             margin: 1em;
             width:50%
@@ -18,6 +19,18 @@
         }
         .logo>img{
             margin:0.5em;
+        }
+        a{
+            background:  transparent linear-gradient(180deg, #1a53a996 0%, #0486f9 100%) 0% 0% no-repeat padding-box;
+            box-shadow:  0px 3px 6px #00000029;
+            border: 1px solid white;
+            border-radius: 23px;
+            width:50%;
+            color: white;
+            margin: 1em;
+            line-height: 2.5em;
+            justify-content: center;
+            padding:1em;
         }
     </style>
 </head>
@@ -37,10 +50,12 @@
                         }
                     ?>
                 </div>
-                <input type="text" name="email" placeholder="email@emailemail.com">
+                <input type="text" name="email" placeholder="email@email.com">
                 <input type="text" name="password" placeholder="password"> 
                 <button type="submit">LOGIN</button>
+
             </form>
+            <a href="register" class="register-link"> Zarejestruj się!</a>
         </div>
 
     </div>

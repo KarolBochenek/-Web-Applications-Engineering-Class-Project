@@ -31,32 +31,7 @@
 </head>
 <body>
     <div class="base-container">
-        <header> 
-            <img src="public/img/uploads/logo.svg" alt="logo">
-            <div class="search-bar">
-                    <input placeholder="Search">
-            </div>
-            <ul>
-                <li>
-                    <i class="lorem ipsum"></i>
-                    <a href="#" class="button">Add item</a>
-                </li>
-                <li>
-                    <i class="lorem ipsum"></i>
-                    <a href="#" class="button">Full items list</a>
-                </li>
-                <li>
-                    <i class="lorem ipsum"></i>
-                    <a href="#" class="button">Manage</a>
-                </li>
-                <li>
-                    <i class="lorem ipsum"></i>
-                    <a href="#" class="button">Log out</a>
-                </li>
-
-            </ul> 
-
-        </header>
+        <?php require_once __DIR__ . '/../templates/header.php'; ?>
         <main>
             <!--<section class="grid-container">
                 <div class="grid-element" id="grid-element1">
@@ -153,16 +128,22 @@
                     </div> 
                 </div> -->
                 <section class="grid-container">
-                    <?php if (isset($items) && count($items) > 0): ?>
+                    <?php if (isset($items)): ?>
                     <?php foreach ($items as $item): ?>
-                        <div id="<?= $item->getId(); ?>">
+                        <div class="grid-element" id="<?= $item->getId(); ?>">
                             <img src="public/img/uploads/<?= $item->getImage(); ?>">
-                            <div>
+                            <div class="content-description">
                                 <h2><?= $item->getTitle(); ?></h2>
+                                <h2><?= $item->getGenre(); ?></h2>
+                                <h2><?= $item->getAuthor(); ?></h2>
                                 <p><?= $item->getDescription(); ?></p>
                             </div>
                         </div>
                     <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr>
+                            <td colspan="5" >Tabela wypożyczeń jest pusta</td>
+                        </tr>
                     <?php endif; ?>
                 </section>
             <section class="right">

@@ -5,7 +5,7 @@ body{
 .container{
     height: 100vh;
     width: 100vw;
-    background: transparent linear-gradient(180deg, #267BFB 0%, #2699FB 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #ffcb49 0%, #ff7d52 100%) 0% 0% no-repeat padding-box;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -43,7 +43,7 @@ header>img{
 }
 
 button{
-    background:  transparent linear-gradient(180deg, #1a53a996 0%, #0486f9 100%) 0% 0% no-repeat padding-box;
+    background:  transparent linear-gradient(180deg, #e0d0c9 0%, #b79da2 100%) 0% 0% no-repeat padding-box;
     box-shadow:  0px 3px 6px #00000029;
     border: 1px solid white;
     border-radius: 23px;
@@ -54,7 +54,7 @@ button{
     padding:1em;
 }
 .button{
-    background:  transparent linear-gradient(180deg, #1a53a996 0%, #0486f9 100%) 0% 0% no-repeat padding-box;
+    background:  transparent linear-gradient(180deg, #52352d 0%, #b79da2 100%) 0% 0% no-repeat padding-box;
     box-shadow:  0px 3px 6px #00000029;
     border: 1px solid white;
     border-radius: 23px;
@@ -75,26 +75,40 @@ input{
 
 }
 
-@media only screen and (max-device-width: 420px){
-
-    .container{
+@media only screen and (max-width: 920px) {
+    .container {
         flex-direction: column;
     }
+
     * {
-        font-size: 16px;
+        font-size: 6px;
     }
-    .login-container, .logo{
-        width:100%;
+
+    .login-container{
+        width: 100%;
     }
-    form {
+
+.logo{
+    width: 80vw;
+    height: 80vh;
+}
+
+form {
         margin: auto;
+    width: 80%;
+    top: 0;
+    }
+
+    img {
+        height: 7em;
+        margin: 2em;
     }
 }
 
 header{
     display: flex;
     flex-direction: row;
-    background: transparent linear-gradient(180deg, #267BFB 0%, #2699FB 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #f7dba7 0%, #bf9577 100%) 0% 0% no-repeat padding-box;
     width:100%;
     border-bottom: #787878 solid;
     justify-content: space-between;
@@ -124,9 +138,11 @@ main{
 
 .right {
     width:20%;
-    background-color: #aab4dc;
+    background: transparent linear-gradient(300deg, #f7dba7 0%, #bf9577 100%) 0% 0% no-repeat padding-box;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
 }
 
 
@@ -137,7 +153,7 @@ a {
 }
 
 .footer{
-    background-color: #46463d;
+    background: transparent linear-gradient(180deg, #f7dba7 0%, #bf9577 100%) 0% 0% no-repeat padding-box;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -146,4 +162,57 @@ a {
 ul{
     margin-top:auto;
     margin-bottom: auto;
+}
+
+.footer {
+    background-color: #292b2c;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 60px;
+    height: auto;
+}
+
+.footer-logo h2 {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #6a85da;
 }
