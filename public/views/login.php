@@ -25,7 +25,7 @@
             box-shadow:  0px 3px 6px #00000029;
             border: 1px solid white;
             border-radius: 23px;
-            width:50%;
+            width:100%;
             color: white;
             margin: 1em;
             line-height: 2.5em;
