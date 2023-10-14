@@ -95,13 +95,13 @@ WHERE pi.item_id = :id;
         $condition = $item->getCondition();
         $stmt = $pdo->prepare('
             INSERT INTO books_details (book_id, pages, publisher, isbn, condition)
-            VALUES (:bookId, :pages, :publisher, :isbn, :condition)
+            VALUES (:book_id, :pages, :publisher, :isbn, :condition)
         ');
         $stmt->bindParam(':book_id', $bookId, PDO::PARAM_INT);
         $stmt->bindParam(':pages', $pages, PDO::PARAM_INT);
-        $stmt->bindParam(':publisher', $publisher, PDO::PARAM_STR_CHAR);
-        $stmt->bindParam(':isbn', $isbn, PDO::PARAM_STR_CHAR);
-        $stmt->bindParam(':condition', $condition, PDO::PARAM_STR_CHAR);
+        $stmt->bindParam(':publisher', $publisher, PDO::PARAM_STR);
+        $stmt->bindParam(':isbn', $isbn, PDO::PARAM_STR);
+        $stmt->bindParam(':condition', $condition, PDO::PARAM_STR);
         $stmt->execute();
         $pdo->commit();
 
@@ -117,10 +117,11 @@ WHERE pi.item_id = :id;
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-SELECT pi.item_id, pi.title, pi.description, pi.genre, pi.image, an.name, bd.pages, bd.publisher, bd.isbn, bd.condition
-FROM public.items pi
-         LEFT JOIN public.authors an ON pi.author_id = an.author_id
-         LEFT JOIN public.books_details bd ON pi.item_id = bd.book_id
+        SELECT pi.item_id, pi.title, pi.description, pi.genre, pi.image, an.name, bd.pages, bd.publisher, bd.isbn, bd.condition
+        FROM public.items pi
+        LEFT JOIN public.authors an ON pi.author_id = an.author_id
+        LEFT JOIN public.books_details bd ON pi.item_id = bd.book_id
+        ORDER BY pi.item_id desc
         ');
         $stmt->execute();
         $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -129,9 +130,9 @@ FROM public.items pi
             $result[] = new Item(
                 $item['title'],
                 $item['description'],
-                $item['author_name'],
-                $item['genre'],
                 $item['image'],
+                $item['genre'],
+                $item['name'],
                 $item['pages'],
                 $item['publisher'],
                 $item['isbn'],

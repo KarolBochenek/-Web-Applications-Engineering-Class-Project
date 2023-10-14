@@ -5,7 +5,7 @@ body{
 .container{
     height: 100vh;
     width: 100vw;
-    background: transparent linear-gradient(180deg, #ffcb49 0%, #ff7d52 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #267bfb 0%, #2699fb 100%) 0% 0% no-repeat padding-box;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -43,7 +43,7 @@ header>img{
 }
 
 button{
-    background:  transparent linear-gradient(180deg, #e0d0c9 0%, #b79da2 100%) 0% 0% no-repeat padding-box;
+    background:  transparent linear-gradient(180deg, #267bfb 0%, #2699fb 100%) 0% 0% no-repeat padding-box;
     box-shadow:  0px 3px 6px #00000029;
     border: 1px solid white;
     border-radius: 23px;
@@ -108,7 +108,7 @@ form {
 header{
     display: flex;
     flex-direction: row;
-    background: transparent linear-gradient(180deg, #f7dba7 0%, #bf9577 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #267bfb 0%, #2699fb 100%) 0% 0% no-repeat padding-box;
     width:100%;
     border-bottom: #787878 solid;
     justify-content: space-between;
@@ -138,7 +138,7 @@ main{
 
 .right {
     width:20%;
-    background: transparent linear-gradient(300deg, #f7dba7 0%, #bf9577 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(300deg, #267bfb 0%, #2699fb 100%) 0% 0% no-repeat padding-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -153,7 +153,7 @@ a {
 }
 
 .footer{
-    background: transparent linear-gradient(180deg, #f7dba7 0%, #bf9577 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #267bfb 0%, #2699fb 100%) 0% 0% no-repeat padding-box;
         display: flex;
         align-items: center;
         justify-content: space-between;

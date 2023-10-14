@@ -7,7 +7,7 @@ require_once __DIR__ . '/../repository/ItemRepository.php';
 class ItemController extends AppController {
 
     const MAX_FILE_SIZE = 1024*1024;
-    const SUPPORTED_TYPES = ['image/png', 'image/jpeg'];
+    const SUPPORTED_TYPES = ['image/png', 'image/jpeg','image/jpg'];
     const UPLOAD_DIRECTORY = '/../public/img/uploads/';
 
     private $message = [];

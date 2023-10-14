@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROJECTS</title>
+    <script src="public/js/book-details.js" defer></script>
     <!--<script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>-->
     <style>
         .search-bar {
@@ -26,6 +27,9 @@
             line-height: 2.5em;
             box-sizing: border-box;
         }
+        .content-details{
+            display: none;
+        }
 
     </style>
 </head>
@@ -33,110 +37,23 @@
     <div class="base-container">
         <?php require_once __DIR__ . '/../templates/header.php'; ?>
         <main>
-            <!--<section class="grid-container">
-                <div class="grid-element" id="grid-element1">
-                    <img src="public/img/uploads/lorem.png" alt="books">
-
-                    <div class="content-description">
-                        <h2>Lorem ipsum dolor sitttt amet</h2>
-                        <p>Lorem ipsum dolor sit ameeet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
-                        <div class="social-section">
-                            <i class="fas-fa heart"> 600 </i>
-                        </div>
-                    </div> 
-                </div>  
-                <div class="grid-element" id="grid-element2">
-                    <img src="public/img/uploads/lorem.png" alt="books">
-                    <div class="content-description">
-                        <h2>Lorem ipsum dolor sit amet</h2> 
-
-                        <p>Lorem ipsum dolor sit amet</p>
-
-                        <div class="social-section">
-                            <i class="fas-fa heart"> 600 </i>
-                        </div>
-                    </div> 
-                </div>
-                <div class="grid-element" id="grid-element3">
-                    <img src="public/img/uploads/lorem.png" alt="books">
-                    <div class="content-description">
-                        <h2>Lorem ipsum dolor sit amet</h2> 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
-                        <div class="social-section">
-                            <i class="fas-fa heart"> 600 </i>
-                        </div>
-                    </div> 
-                </div>
-                <div class="grid-element" id="grid-element4">
-                    <img src="public/img/uploads/lorem.png" alt="books">
-                    <div class="content-description">
-                        <h2>Lorem ipsum dolor sit amet</h2> 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
-                        <div class="social-section">
-                            <i class="fas-fa heart"> 600 </i>
-                        </div>
-                    </div> 
-                </div>
-                <div class="grid-element" id="grid-element5">
-                    <img src="public/img/uploads/lorem.png" alt="books">
-                    <div class="content-description">
-                        <h2>Lorem ipsum dolor sit amet</h2> 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
-                        <div class="social-section">
-                            <i class="fas-fa heart"> 600 </i>
-                        </div>
-                    </div> 
-                </div>
-                <div class="grid-element" id="grid-element6">
-                    <img src="public/img/uploads/lorem.png" alt="books">
-                    <div class="content-description">
-                        <h2>Lorem ipsum dolor sit amet</h2> 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
-                        <div class="social-section">
-                            <i class="fas-fa heart"> 600 </i>
-                        </div>
-                    </div> 
-                </div>
-                <div class="grid-element" id="grid-element6">
-                    <img src="public/img/uploads/lorem.png" alt="books">
-                    <div class="content-description">
-                        <h2>Lorem ipsum dolor sit amet</h2> 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
-                        <div class="social-section">
-                            <i class="fas-fa heart"> 600 </i>
-                        </div>
-                    </div> 
-                </div>
-                <div class="grid-element" id="grid-element6">
-                    <img src="public/img/uploads/lorem.png" alt="books">
-                    <div class="content-description">
-                        <h2>Lorem ipsum dolor sit amet</h2> 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
-                        <div class="social-section">
-                            <i class="fas-fa heart"> 600 </i>
-                        </div>
-                    </div> 
-                </div>
-                <div class="grid-element" id="grid-element6">
-                    <img src="public/img/uploads/lorem.png" alt="books">
-                    <div class="content-description">
-                        <h2>Lorem ipsum dolor sit amet</h2> 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo nisi sed auctor hendrerit. Aliquam in semper libero.</p>
-                        <div class="social-section">
-                            <i class="fas-fa heart"> 600 </i>
-                        </div>
-                    </div> 
-                </div> -->
                 <section class="grid-container">
                     <?php if (isset($items)): ?>
                     <?php foreach ($items as $item): ?>
                         <div class="grid-element" id="<?= $item->getId(); ?>">
                             <img src="public/img/uploads/<?= $item->getImage(); ?>">
                             <div class="content-description">
-                                <h2><?= $item->getTitle(); ?></h2>
-                                <h2><?= $item->getGenre(); ?></h2>
-                                <h2><?= $item->getAuthor(); ?></h2>
+                                <h3><?= $item->getTitle(); ?></h3>
+                                <h3><?= $item->getGenre(); ?></h3>
+                                <h3><?= $item->getAuthor(); ?></h3>
                                 <p><?= $item->getDescription(); ?></p>
+                                <div class="content-details">
+                                 <p>Number of pages: <?=$item->getPages();?></p>
+                                    <p>Publisher: <?=$item->getPublisher();?></p>
+                                    <p>ISBN: <?=$item->getISBN();?></p>
+                                    <p>Condition: <?=$item->getCondition();?></p>
+
+                                </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
