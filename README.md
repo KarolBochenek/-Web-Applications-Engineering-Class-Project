@@ -32,3 +32,4 @@ Aby uruchomić projekt lokalnie, postępuj zgodnie z poniższymi krokami:
 * Docker
 
 ## Diagram ERD
+![Entity-Relationship-Diagram](https://github.com/KarolBochenek/wdpai_2023/blob/lab01/Entity-Relationship-Diagram.png)
