@@ -49,7 +49,7 @@ WHERE pi.item_id = :id;
         $genre = $item->getGenre();
         $authorName = $item->getAuthor();
 
-        echo "title: " . $title." descrption: ".$description." image ".$image." genre ".$genre." author ".$authorName;
+        //echo "title: " . $title." descrption: ".$description." image ".$image." genre ".$genre." author ".$authorName;
         $stmt = $pdo->prepare('SELECT author_id FROM authors WHERE name = :author');
         $stmt->bindParam(':author', $authorName, PDO::PARAM_STR);
         $stmt->execute();
@@ -65,7 +65,6 @@ WHERE pi.item_id = :id;
             $authorId = $author['author_id'];
         }
         $date = new DateTime();
-        echo "author_id : ".$authorId;
         $stmt = $this->database->connect()->prepare('
             INSERT INTO items (title, description, image, genre, author_id)
             VALUES (:title, :description, :image, :genre, :author_id)
@@ -83,7 +82,6 @@ WHERE pi.item_id = :id;
         $stmt->execute();
 
         $bookId = $stmt->fetchColumn();
-        echo "book_id: ".$bookId;
         $stmt = $pdo->prepare('INSERT INTO books_authors (book_id, author_id) VALUES (:book_id, :author_id)');
         $stmt->bindParam(':book_id', $bookId, PDO::PARAM_INT);
         $stmt->bindParam(':author_id', $authorId, PDO::PARAM_INT);

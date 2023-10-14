@@ -13,6 +13,14 @@
         .search-bar {
             width: 30%;
         }
+        section{
+            display:grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap: 2em;
+            padding: 2em;
+            overflow: auto;
+            margin-top: 1em;
+        }
 
         .search-bar>input {
             background: #FFFFFF 0% 0% no-repeat padding-box;

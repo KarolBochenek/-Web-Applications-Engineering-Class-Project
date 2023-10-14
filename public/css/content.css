@@ -1,9 +1,10 @@
 section{
     display:grid;
     grid-template-columns: repeat(4,1fr);
-    grid-gap: 2em;
+    grid-gap: 1em;
     padding: 2em;
     overflow: auto;
+    margin-top: 1em;
 }
 .grid-element>img{
     width: 100%;
